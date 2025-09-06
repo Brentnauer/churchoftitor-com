@@ -4,7 +4,10 @@ import * as _Builtin from "./_Builtin";
 import * as _utils from "./utils";
 import _styles from "./Header.module.css";
 
-export function Header({ as: _Component = _Builtin.Block }) {
+export function Header({
+  as: _Component = _Builtin.Block,
+  text = "Church of Titor",
+}) {
   return (
     <_Component tag="div">
       <_Builtin.Block
@@ -38,7 +41,7 @@ export function Header({ as: _Component = _Builtin.Block }) {
               className={_utils.cx(_styles, "text-block")}
               tag="div"
             >
-              {"Church of Titor"}
+              {text}
             </_Builtin.Block>
           </_Builtin.NavbarBrand>
           <_Builtin.NavbarMenu tag="nav" role="navigation">
