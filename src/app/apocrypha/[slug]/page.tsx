@@ -1,19 +1,23 @@
-// app/apocrypha/[slug]/page.tsx (or wherever your dynamic route is)
+// app/apocrypha/[slug]/page.tsx
 import { createReader } from "@keystatic/core/reader";
 import React from "react";
 import Markdoc from "@markdoc/markdoc";
-import { Header } from "../../../../devlink/Header"
-import { PageHeading } from "../../../../devlink/PageHeading"
-import { BasicSection } from "../../../../devlink/BasicSection"
-
+import { Header } from "../../../../devlink/Header";
+import { PageHeading } from "../../../../devlink/PageHeading";
+import { BasicSection } from "../../../../devlink/BasicSection";
 import keystaticConfig from "keystatic.config";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
+export async function generateStaticParams() {
+  const slugs = await reader.collections.apocrypha.list();
+  return slugs.map((slug) => ({ slug }));
+}
+
 export default async function Post({ params }: { params: { slug: string } }) {
-  const post = await reader.collections.apocrypha.read(params.slug); // Changed from posts to apocrypha
+  const post = await reader.collections.apocrypha.read(params.slug);
   if (!post) {
-    return <div>No Apocrypha Found</div>; // Updated error message for clarity
+    return <div>No Apocrypha Found</div>;
   }
   const { node } = await post.content();
   const errors = Markdoc.validate(node);
@@ -24,13 +28,9 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const renderable = Markdoc.transform(node);
   return (
     <>
-    <Header />
-    <PageHeading
-    title = {post.title}
-    />
-    <BasicSection
-    slot = {Markdoc.renderers.react(renderable, React)}
-    ></BasicSection>
+      <Header />
+      <PageHeading title={post.title} />
+      <BasicSection slot={Markdoc.renderers.react(renderable, React)} />
       <hr />
       <a href={`/apocrypha`}>Back to Apocrypha</a>
     </>
