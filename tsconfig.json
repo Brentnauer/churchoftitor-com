@@ -19,6 +19,7 @@
       }
     ],
     "paths": {
+      "keystatic.config": ["./keystatic.config.ts"],
       "@/*": ["./src/*"]
     }
   },

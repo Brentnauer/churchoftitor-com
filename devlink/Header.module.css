@@ -1,0 +1,37 @@
+.caution-stripe {
+  height: 20px;
+  border-bottom: 1px solid hsla(0, 0.00%, 100.00%, 0.20);
+  background-image: url("https://cdn.prod.website-files.com/68b3d89662bdee59046a3423/68ba3844e42fa65f3c40c4ae_8899854976_1343ea8cb1_o.jpg");
+  background-position: 0px 0px;
+  background-size: auto;
+}
+
+.navbar {
+  background-color: transparent;
+  color: #fefefe;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsla(0, 0.00%, 100.00%, 0.20);
+}
+
+.brand {
+  flex: 1;
+}
+
+.text-block {
+  font-family: Bitter, serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nav-item {
+  font-family: 'Times New Roman', TimesNewRoman, Times, Baskerville, Georgia, serif;
+  color: #20deff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
