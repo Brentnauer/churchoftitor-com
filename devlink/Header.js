@@ -31,7 +31,7 @@ export function Header({ as: _Component = _Builtin.Block }) {
           <_Builtin.NavbarBrand
             className={_utils.cx(_styles, "brand")}
             options={{
-              href: "https://./",
+              href: "https://www.churchoftitor.com",
             }}
           >
             <_Builtin.Block

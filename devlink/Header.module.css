@@ -20,6 +20,8 @@
 
 .brand {
   flex: 1;
+  color: white;
+  font-weight: 700;
 }
 
 .text-block {
