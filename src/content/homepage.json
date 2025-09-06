@@ -1,0 +1,24 @@
+{
+  "title": "Church of Titor",
+  "components": [
+    {
+      "type": "hero",
+      "properties": {
+        "discriminant": "hero",
+        "value": {
+          "heading": "Hero heading",
+          "subheading": "Hero subheading"
+        }
+      }
+    },
+    {
+      "type": "textBlock",
+      "properties": {
+        "discriminant": "textBlock",
+        "value": {
+          "alignment": "left"
+        }
+      }
+    }
+  ]
+}
