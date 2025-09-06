@@ -30,8 +30,9 @@ export default async function Post({ params }: { params: { slug: string } }) {
     />
     <BasicSection
     slot = {Markdoc.renderers.react(renderable, React)}
-    />
-
+    ></BasicSection>
+      <hr />
+      <a href={`/apocrypha`}>Back to Apocrypha</a>
     </>
   );
 }
