@@ -1,0 +1,16 @@
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid hsla(0, 0.00%, 100.00%, 0.20);
+}
+
+.card-display {
+  display: grid;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}

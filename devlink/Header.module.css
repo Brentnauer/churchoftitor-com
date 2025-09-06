@@ -35,3 +35,8 @@
   font-weight: 700;
   text-transform: uppercase;
 }
+
+.nav-item:global(.w--current) {
+  color: #20deff;
+  text-decoration: underline;
+}

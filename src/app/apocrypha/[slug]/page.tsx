@@ -2,6 +2,9 @@
 import { createReader } from "@keystatic/core/reader";
 import React from "react";
 import Markdoc from "@markdoc/markdoc";
+import { Header } from "../../../../devlink/Header"
+import { PageHeading } from "../../../../devlink/PageHeading"
+import { BasicSection } from "../../../../devlink/BasicSection"
 
 import keystaticConfig from "keystatic.config";
 
@@ -21,10 +24,14 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const renderable = Markdoc.transform(node);
   return (
     <>
-      <h1>{post.title}</h1>
-      {Markdoc.renderers.react(renderable, React)}
-      <hr />
-      <a href={`/apocrypha`}>Back to Apocrypha</a>
+    <Header />
+    <PageHeading
+    title = {post.title}
+    />
+    <BasicSection
+    slot = {Markdoc.renderers.react(renderable, React)}
+    />
+
     </>
   );
 }

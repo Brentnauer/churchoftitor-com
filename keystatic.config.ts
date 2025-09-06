@@ -1,8 +1,13 @@
-// keystatic.config.ts
 import { config, fields, collection, singleton } from '@keystatic/core';
 
 export default config({
-  storage: { kind: 'local' },
+  storage: {
+    kind: 'github',
+    repo: {
+      owner: 'brentnauer', // Replace with your GitHub username or organization
+      name: 'churchoftitor-com', // Replace with your repository name
+    }
+  },
   collections: {
     posts: collection({
       label: 'Posts',

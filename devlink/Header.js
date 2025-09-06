@@ -31,7 +31,7 @@ export function Header({ as: _Component = _Builtin.Block }) {
           <_Builtin.NavbarBrand
             className={_utils.cx(_styles, "brand")}
             options={{
-              href: "https://../../",
+              href: "https://./",
             }}
           >
             <_Builtin.Block
@@ -65,14 +65,6 @@ export function Header({ as: _Component = _Builtin.Block }) {
               }}
             >
               <_Builtin.Strong>{"Apocrypha"}</_Builtin.Strong>
-            </_Builtin.NavbarLink>
-            <_Builtin.NavbarLink
-              className={_utils.cx(_styles, "nav-item")}
-              options={{
-                href: "#",
-              }}
-            >
-              {"Contact"}
             </_Builtin.NavbarLink>
             <_Builtin.NavbarLink
               className={_utils.cx(_styles, "nav-item")}
