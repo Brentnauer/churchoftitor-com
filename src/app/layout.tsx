@@ -4,10 +4,18 @@ import "./globals.css";
 import "devlink/global.css";
 import { DevLinkProvider } from "devlink/DevLinkProvider";
 import { Header } from "devlink/Header";
+import { Footer } from "devlink/Footer";
 import { Inter } from "next/font/google";
 
 import keystaticConfig from "keystatic.config";
 import { createReader } from "@keystatic/core/reader";
+
+import { Bitter } from "next/font/google";
+
+const bitter = Bitter({
+  subsets: ["latin"],
+});
+
 
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
 
@@ -81,6 +89,7 @@ export default async function RootLayout({
         <DevLinkProvider>
           <Header text={siteTitle} />
           <main>{children}</main>
+          <Footer />
         </DevLinkProvider>
       </body>
     </html>

@@ -14,6 +14,7 @@ export * from "./BasicSection";
 export * from "./CardDisplay";
 export * from "./CreedTabs";
 export * from "./DevLinkProvider";
+export * from "./Footer";
 export * from "./Header";
 export * from "./PageHeading";
 export * from "./ScriptBody";
