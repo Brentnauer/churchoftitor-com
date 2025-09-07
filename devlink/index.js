@@ -12,6 +12,7 @@ export * from "./devlink";
 export * from "./ApocryphaCard";
 export * from "./BasicSection";
 export * from "./CardDisplay";
+export * from "./CreedTabs";
 export * from "./DevLinkProvider";
 export * from "./Header";
 export * from "./PageHeading";

@@ -2,7 +2,6 @@
 import { createReader } from "@keystatic/core/reader";
 import React from "react";
 import Markdoc from "@markdoc/markdoc";
-import { Header } from "devlink/Header";
 import { PageHeading } from "devlink/PageHeading";
 import { BasicSection } from "devlink/BasicSection";
 import { ScriptBody } from "devlink/ScriptBody";
@@ -30,7 +29,6 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const content = Markdoc.renderers.react(renderable, React) as React.ReactNode;
   return (
     <>
-      <Header />
       <PageHeading 
       title={post.title} 
       />
