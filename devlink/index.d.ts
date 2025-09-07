@@ -15,3 +15,4 @@ export * from "./CardDisplay";
 export * from "./DevLinkProvider";
 export * from "./Header";
 export * from "./PageHeading";
+export * from "./ScriptBody";

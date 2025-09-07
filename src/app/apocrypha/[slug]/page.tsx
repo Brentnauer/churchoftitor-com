@@ -2,9 +2,10 @@
 import { createReader } from "@keystatic/core/reader";
 import React from "react";
 import Markdoc from "@markdoc/markdoc";
-import { Header } from "../../../../devlink/Header";
-import { PageHeading } from "../../../../devlink/PageHeading";
-import { BasicSection } from "../../../../devlink/BasicSection";
+import { Header } from "devlink/Header";
+import { PageHeading } from "devlink/PageHeading";
+import { BasicSection } from "devlink/BasicSection";
+import { ScriptBody } from "devlink/ScriptBody";
 import keystaticConfig from "keystatic.config";
 
 const reader = createReader(process.cwd(), keystaticConfig);
@@ -26,11 +27,14 @@ export default async function Post({ params }: { params: { slug: string } }) {
     throw new Error("Invalid content");
   }
   const renderable = Markdoc.transform(node);
+  const content = Markdoc.renderers.react(renderable, React) as React.ReactNode;
   return (
     <>
       <Header />
-      <PageHeading title={post.title} />
-      <BasicSection slot={Markdoc.renderers.react(renderable, React)} />
+      <PageHeading 
+      title={post.title} 
+      />
+      <BasicSection slot={<ScriptBody content={content} />} />
       <hr />
       <a href={`/apocrypha`}>Back to Apocrypha</a>
     </>

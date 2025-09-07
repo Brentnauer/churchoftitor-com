@@ -1,11 +1,10 @@
 // app/apocrypha/page.tsx
 import { createReader } from "@keystatic/core/reader";
-import Link from "next/link";
 import keystaticConfig from "keystatic.config";
-import { Header } from "../../../devlink/Header"
-import { PageHeading } from "../../../devlink/PageHeading"
-import { ApocryphaCard } from "../../../devlink/ApocryphaCard"
-import { CardDisplay } from "../../../devlink/CardDisplay"
+import { Header } from "devlink/Header"
+import { PageHeading } from "devlink/PageHeading"
+import { ApocryphaCard } from "devlink/ApocryphaCard"
+import { CardDisplay } from "devlink/CardDisplay"
 
 const reader = createReader(process.cwd(), keystaticConfig);
 

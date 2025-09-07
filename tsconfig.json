@@ -20,7 +20,8 @@
     ],
     "paths": {
       "keystatic.config": ["./keystatic.config.ts"],
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "devlink/*": ["./devlink/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
