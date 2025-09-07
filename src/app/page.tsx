@@ -1,7 +1,7 @@
 // app/page.tsx
-import { Header } from "devlink/Header";
 import keystaticConfig from "keystatic.config"; 
 import { createReader } from "@keystatic/core/reader";
+import { BasicSection } from "devlink/BasicSection";
 
 export default async function HomePage() {
   // create reader instance
@@ -15,7 +15,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Header text={siteTitle} />
+    <BasicSection slot={<h2 style={{ textAlign: "center" }}>Welcome to the Church of Titor.<br />This is a placeholder homepage.</h2>} />
     </>
   );
 }

@@ -2,15 +2,19 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "devlink/global.css";
-import { DevLinkProvider } from 'devlink/DevLinkProvider';
+import { DevLinkProvider } from "devlink/DevLinkProvider";
+import { Header } from "devlink/Header";
 import { Inter } from "next/font/google";
+
+import keystaticConfig from "keystatic.config";
+import { createReader } from "@keystatic/core/reader";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
 
-const siteUrl = "https://www.timetravelinstitute.com";
+const siteUrl = "https://www.churchoftitor.com";
 const siteName = "The Church of Titor";
 const siteDescription =
-  "An apocryphal annex of the Time Travel Institute. A living hypertext liturgy dedicated to John Titor, retrocomputing, and temporal esoterica.";
+  "A living hypertext liturgy dedicated to John Titor, retrocomputing, and temporal esoterica.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -23,27 +27,17 @@ export const metadata: Metadata = {
   authors: [{ name: "Time Travel Institute" }],
   generator: "Next.js",
   referrer: "strict-origin-when-cross-origin",
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: siteUrl,
     title: siteName,
     siteName,
     description: siteDescription,
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "The Church of Titor — Time Travel Institute",
-      },
-    ],
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "The Church of Titor — Time Travel Institute" }],
     locale: "en_US",
   },
   twitter: {
-    // Even if you don’t use Twitter, most link unfurlers support this card spec.
     card: "summary_large_image",
     title: siteName,
     description: siteDescription,
@@ -58,10 +52,7 @@ export const metadata: Metadata = {
     shortcut: ["/favicon.ico"],
   },
   manifest: "/site.webmanifest",
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
@@ -74,15 +65,23 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Read site title from Keystatic singleton (with fallback)
+  const reader = createReader(process.cwd(), keystaticConfig);
+  const homepage = await reader.singletons.homepage.read();
+  const siteTitle = homepage?.title ?? "Church of Titor";
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
-        <DevLinkProvider>{children}</DevLinkProvider>
+        <DevLinkProvider>
+          <Header text={siteTitle} />
+          <main>{children}</main>
+        </DevLinkProvider>
       </body>
     </html>
   );

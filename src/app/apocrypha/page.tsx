@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "keystatic.config";
-import { Header } from "devlink/Header";
 import { PageHeading } from "devlink/PageHeading";
 import { ApocryphaCard } from "devlink/ApocryphaCard";
 import { CardDisplay } from "devlink/CardDisplay";
@@ -38,7 +37,6 @@ export default async function ApocryphaList() {
 
   return (
     <>
-      <Header />
       <PageHeading title="Apocrypha" />
       {apocrypha.length === 0 ? (
         <p style={{ padding: "1rem" }}>Nothing here yet.</p>
