@@ -48,7 +48,7 @@ export function Header({
             <_Builtin.NavbarLink
               className={_utils.cx(_styles, "nav-item")}
               options={{
-                href: "#",
+                href: "/about",
               }}
             >
               {"About"}
@@ -56,7 +56,7 @@ export function Header({
             <_Builtin.NavbarLink
               className={_utils.cx(_styles, "nav-item")}
               options={{
-                href: "#",
+                href: "/transmissions",
               }}
             >
               {"Transmissions"}
@@ -72,7 +72,7 @@ export function Header({
             <_Builtin.NavbarLink
               className={_utils.cx(_styles, "nav-item")}
               options={{
-                href: "#",
+                href: "/contact",
               }}
             >
               {"Contact"}

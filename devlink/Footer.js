@@ -29,7 +29,7 @@ export function Footer({ as: _Component = _Builtin.Section }) {
           tag="div"
         >
           {
-            "© 2036 – 2025 The Church of Titor.All rights reserved in this and adjacent timelines."
+            "© 2036 – 2025 The Church of Titor. All rights reserved in this and adjacent timelines."
           }
         </_Builtin.Block>
       </_Builtin.BlockContainer>

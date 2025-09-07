@@ -4,3 +4,7 @@
   border-width: 10px;
   border-color: #444 #333;
 }
+
+.heading {
+  font-family: Inconsolata, monospace;
+}

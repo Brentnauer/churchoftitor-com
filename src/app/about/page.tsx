@@ -1,10 +1,10 @@
 import { PageHeading } from "devlink/PageHeading"
 
 
-export default function ContactPage() {
+export default function AboutPage() {
   return (
     <PageHeading
-      title="Contact"
+      title="Transmissions"
     />
   );
 }
