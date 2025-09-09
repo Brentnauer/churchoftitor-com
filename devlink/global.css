@@ -2161,6 +2161,14 @@ body {
   line-height: 20px;
 }
 
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
 .w-layout-blockcontainer {
   display: block;
   margin-left: auto;

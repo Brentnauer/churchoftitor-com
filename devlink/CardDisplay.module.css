@@ -11,6 +11,7 @@
   grid-auto-columns: 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+  grid-template-areas: "Area";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
 }

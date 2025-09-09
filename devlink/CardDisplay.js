@@ -14,13 +14,17 @@ export function CardDisplay({ as: _Component = _Builtin.Section, slot }) {
       tag="section"
     >
       <_Builtin.BlockContainer
-        className={_utils.cx(_styles, "card-display")}
         grid={{
           type: "container",
         }}
         tag="div"
       >
-        {slot}
+        <_Builtin.Block
+          className={_utils.cx(_styles, "card-display")}
+          tag="div"
+        >
+          {slot}
+        </_Builtin.Block>
       </_Builtin.BlockContainer>
     </_Component>
   );

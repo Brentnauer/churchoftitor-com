@@ -2,23 +2,47 @@
 import { PageHeading } from "devlink/PageHeading";
 import { ApocryphaCard as ScriptCard } from "devlink/ApocryphaCard";
 import { CardDisplay } from "devlink/CardDisplay";
-import { fetchTopicsByTag } from "@/lib/discourse";
+import {
+  fetchTopicsByTag,
+  fetchTopicAuthorMeta,
+  formatDate,
+  unixDate,
+} from "@/lib/discourse";
 
 export default async function ScriptsIndex() {
   const topics = await fetchTopicsByTag("titorian-scripts");
 
+  const cards = await Promise.all(
+    topics.map(async (t) => {
+      const { username, avatar, userHref } = await fetchTopicAuthorMeta(t.id);
+      return {
+        id: t.id,
+        title: t.title,
+        username,
+        avatar,
+        userHref,
+        date: formatDate(t.created_at),   // "08 Sep 2025"
+        unixdate: unixDate(t.created_at), // 1757356800
+      };
+    })
+  );
+
   return (
     <>
       <PageHeading title="Scripts" />
-      {topics.length === 0 ? (
+      {cards.length === 0 ? (
         <p style={{ padding: "1rem" }}>Nothing here yet.</p>
       ) : (
         <CardDisplay
-          slot={topics.map((t) => (
+          slot={cards.map((c) => (
             <ScriptCard
-              key={t.id}
-              title={t.title}
-              link={{ href: `/scripts/${t.id}` }} // ID-only URLs
+              key={c.id}
+              title={c.title}
+              username={c.username}
+              date={`Witnessed: ${c.unixdate}`}                 // or use c.unixdate if desired
+              avatar={c.avatar}
+              link={{ href: `/scripts/${c.id}` }}
+              userLink={{ href: c.userHref }}
             />
           ))}
         />
