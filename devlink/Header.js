@@ -65,31 +65,38 @@ export function Header({
               <_Builtin.DropdownList tag="nav">
                 <_Builtin.DropdownLink
                   options={{
-                    href: "#",
+                    href: "/transmissions",
+                  }}
+                >
+                  {"About Transmissions"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "/transmissions/posts",
                   }}
                 >
                   {"Posts"}
                 </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
-                    href: "#",
-                  }}
-                >
-                  {"IRCChat"}
-                </_Builtin.DropdownLink>
-                <_Builtin.DropdownLink
-                  options={{
-                    href: "#",
+                    href: "/transmissions/faxes",
                   }}
                 >
                   {"Faxes"}
                 </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
-                    href: "#",
+                    href: "/transmissions/irc",
                   }}
                 >
-                  {"Images"}
+                  {"IRCChat"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "/transmissions/scans",
+                  }}
+                >
+                  {"Scans"}
                 </_Builtin.DropdownLink>
               </_Builtin.DropdownList>
             </_Builtin.DropdownWrapper>
@@ -109,38 +116,45 @@ export function Header({
               <_Builtin.DropdownList tag="nav">
                 <_Builtin.DropdownLink
                   options={{
-                    href: "#",
+                    href: "/codex",
+                  }}
+                >
+                  {"About the Codex"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "/codex/webring",
                   }}
                 >
                   {"Webring"}
                 </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
-                    href: "#",
+                    href: "/codex/scripts",
                   }}
                 >
-                  {"Artwork"}
+                  {"Scripts"}
                 </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
-                    href: "#",
+                    href: "/codex/stories",
                   }}
                 >
                   {"Stories"}
                 </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
-                    href: "#",
+                    href: "/codex/videos",
                   }}
                 >
                   {"Videos"}
                 </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
-                    href: "#",
+                    href: "/codex/gallery",
                   }}
                 >
-                  {"Scripts"}
+                  {"Gallery"}
                 </_Builtin.DropdownLink>
               </_Builtin.DropdownList>
             </_Builtin.DropdownWrapper>
@@ -158,6 +172,13 @@ export function Header({
                 <_Builtin.Block tag="div">{"Doctrine"}</_Builtin.Block>
               </_Builtin.DropdownToggle>
               <_Builtin.DropdownList tag="nav">
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"What We Believe"}
+                </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
                     href: "#",
@@ -216,7 +237,7 @@ export function Header({
               button={true}
               block=""
               options={{
-                href: "#",
+                href: "/ascend",
               }}
             >
               {"Ascend"}
