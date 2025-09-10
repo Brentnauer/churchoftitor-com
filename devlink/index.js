@@ -20,3 +20,4 @@ export * from "./Header";
 export * from "./PageHeading";
 export * from "./ScriptBody";
 export * from "./TransmissionsContent";
+export * from "./WebringContent";
