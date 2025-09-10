@@ -2169,6 +2169,10 @@ h2 {
   font-weight: 700;
 }
 
+p {
+  margin-bottom: 10px;
+}
+
 .w-layout-blockcontainer {
   display: block;
   margin-left: auto;

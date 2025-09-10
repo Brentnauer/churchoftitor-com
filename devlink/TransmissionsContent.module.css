@@ -23,3 +23,11 @@
 .page-content li {
   margin-bottom: 20px;
 }
+
+.page-content.fax {
+  font-family: 'Times New Roman', TimesNewRoman, Times, Baskerville, Georgia, serif;
+}
+
+.page-content.fax p {
+  margin-bottom: 20px;
+}

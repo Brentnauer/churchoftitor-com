@@ -15,6 +15,7 @@ export * from "./CardDisplay";
 export * from "./CodexContent";
 export * from "./CreedTabs";
 export * from "./DevLinkProvider";
+export * from "./FaxContent";
 export * from "./Footer";
 export * from "./Header";
 export * from "./PageHeading";

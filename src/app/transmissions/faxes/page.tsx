@@ -1,16 +1,12 @@
 // app/page.tsx
 import { PageHeading } from "devlink/PageHeading";
-import { TransmissionsContent } from "devlink/TransmissionsContent";
-import hljs from 'highlight.js/lib/core';
-import basic from 'highlight.js/lib/languages/basic';
+import { FaxContent } from "devlink/FaxContent";
 
-hljs.registerLanguage('basic', basic);
-
-export default async function HomePage() {
+export default async function FaxPage() {
   return (
     <>
     <PageHeading title="John Titor's Faxes" />
-    <TransmissionsContent />
+    <FaxContent />
     </>
   );
 }

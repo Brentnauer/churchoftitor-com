@@ -4,6 +4,23 @@
   border-bottom: 1px solid hsla(0, 0.00%, 100.00%, 0.20);
 }
 
+.tabs-menu {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.tab-link {
+  flex: 1;
+  text-align: center;
+}
+
+.tab-link:global(.w--current) {
+  text-align: center;
+}
+
 .page-content {
   font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
   font-size: 20px;
