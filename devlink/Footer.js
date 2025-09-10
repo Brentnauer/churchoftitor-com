@@ -19,11 +19,6 @@ export function Footer({ as: _Component = _Builtin.Section }) {
         }}
         tag="div"
       >
-        <_Builtin.Block tag="div" />
-        <_Builtin.Block tag="div" />
-        <_Builtin.Block tag="div">
-          <_Builtin.Block tag="div" />
-        </_Builtin.Block>
         <_Builtin.Block
           className={_utils.cx(_styles, "text-block-2")}
           tag="div"

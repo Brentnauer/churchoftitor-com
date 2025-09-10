@@ -12,12 +12,10 @@ import { createReader } from "@keystatic/core/reader";
 
 import { Bitter } from "next/font/google";
 
-const bitter = Bitter({
-  subsets: ["latin"],
-});
 
-
+const bitter = Bitter({ subsets: ["latin"], display: "swap", variable: "--font-bitter" });
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
+console.log(bitter);
 
 const siteUrl = "https://www.churchoftitor.com";
 const siteName = "The Church of Titor";

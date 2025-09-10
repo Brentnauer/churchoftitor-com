@@ -1,0 +1,25 @@
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid hsla(0, 0.00%, 100.00%, 0.20);
+}
+
+.page-content {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.page-content h2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  font-family: 'Times New Roman', TimesNewRoman, Times, Baskerville, Georgia, serif;
+  color: yellow;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.page-content li {
+  margin-bottom: 20px;
+}

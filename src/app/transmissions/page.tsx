@@ -1,11 +1,16 @@
-// app/apocrypha/[slug]/page.tsx (or wherever your dynamic route is)
-import { PageHeading } from "devlink/PageHeading"
+// app/page.tsx
+import { PageHeading } from "devlink/PageHeading";
+import { TransmissionsContent } from "devlink/TransmissionsContent";
+import hljs from 'highlight.js/lib/core';
+import basic from 'highlight.js/lib/languages/basic';
 
+hljs.registerLanguage('basic', basic);
 
-export default function TransmissionsPage() {
+export default async function HomePage() {
   return (
-    <PageHeading
-      title="Transmissions"
-    />
+    <>
+    <PageHeading title="Transmissions" />
+    <TransmissionsContent />
+    </>
   );
 }

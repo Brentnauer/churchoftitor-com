@@ -44,39 +44,183 @@ export function Header({
               {text}
             </_Builtin.Block>
           </_Builtin.NavbarBrand>
-          <_Builtin.NavbarMenu tag="nav" role="navigation">
-            <_Builtin.NavbarLink
-              className={_utils.cx(_styles, "nav-item")}
+          <_Builtin.NavbarMenu
+            className={_utils.cx(_styles, "nav-wrapper")}
+            tag="nav"
+            role="navigation"
+          >
+            <_Builtin.DropdownWrapper tag="div" delay={0} hover={false}>
+              <_Builtin.DropdownToggle
+                className={_utils.cx(_styles, "nav-dropdown")}
+                tag="div"
+              >
+                <_Builtin.Icon
+                  widget={{
+                    type: "icon",
+                    icon: "dropdown-toggle",
+                  }}
+                />
+                <_Builtin.Block tag="div">{"Transmissions"}</_Builtin.Block>
+              </_Builtin.DropdownToggle>
+              <_Builtin.DropdownList tag="nav">
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Posts"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"IRCChat"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Faxes"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Images"}
+                </_Builtin.DropdownLink>
+              </_Builtin.DropdownList>
+            </_Builtin.DropdownWrapper>
+            <_Builtin.DropdownWrapper tag="div" delay={0} hover={false}>
+              <_Builtin.DropdownToggle
+                className={_utils.cx(_styles, "nav-dropdown")}
+                tag="div"
+              >
+                <_Builtin.Icon
+                  widget={{
+                    type: "icon",
+                    icon: "dropdown-toggle",
+                  }}
+                />
+                <_Builtin.Block tag="div">{"Codex"}</_Builtin.Block>
+              </_Builtin.DropdownToggle>
+              <_Builtin.DropdownList tag="nav">
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Webring"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Artwork"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Stories"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Videos"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Scripts"}
+                </_Builtin.DropdownLink>
+              </_Builtin.DropdownList>
+            </_Builtin.DropdownWrapper>
+            <_Builtin.DropdownWrapper tag="div" delay={0} hover={false}>
+              <_Builtin.DropdownToggle
+                className={_utils.cx(_styles, "nav-dropdown")}
+                tag="div"
+              >
+                <_Builtin.Icon
+                  widget={{
+                    type: "icon",
+                    icon: "dropdown-toggle",
+                  }}
+                />
+                <_Builtin.Block tag="div">{"Doctrine"}</_Builtin.Block>
+              </_Builtin.DropdownToggle>
+              <_Builtin.DropdownList tag="nav">
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Creed"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Beliefs"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Rituals"}
+                </_Builtin.DropdownLink>
+              </_Builtin.DropdownList>
+            </_Builtin.DropdownWrapper>
+            <_Builtin.DropdownWrapper tag="div" delay={0} hover={false}>
+              <_Builtin.DropdownToggle
+                className={_utils.cx(_styles, "nav-dropdown")}
+                tag="div"
+              >
+                <_Builtin.Icon
+                  widget={{
+                    type: "icon",
+                    icon: "dropdown-toggle",
+                  }}
+                />
+                <_Builtin.Block tag="div">{"Offerings"}</_Builtin.Block>
+              </_Builtin.DropdownToggle>
+              <_Builtin.DropdownList tag="nav">
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Donate"}
+                </_Builtin.DropdownLink>
+                <_Builtin.DropdownLink
+                  options={{
+                    href: "#",
+                  }}
+                >
+                  {"Shop"}
+                </_Builtin.DropdownLink>
+              </_Builtin.DropdownList>
+            </_Builtin.DropdownWrapper>
+            <_Builtin.Link
+              className={_utils.cx(_styles, "button")}
+              button={true}
+              block=""
               options={{
-                href: "/about",
+                href: "#",
               }}
             >
-              {"About"}
-            </_Builtin.NavbarLink>
-            <_Builtin.NavbarLink
-              className={_utils.cx(_styles, "nav-item")}
-              options={{
-                href: "/transmissions",
-              }}
-            >
-              {"Transmissions"}
-            </_Builtin.NavbarLink>
-            <_Builtin.NavbarLink
-              className={_utils.cx(_styles, "nav-item")}
-              options={{
-                href: "/apocrypha",
-              }}
-            >
-              <_Builtin.Strong>{"Apocrypha"}</_Builtin.Strong>
-            </_Builtin.NavbarLink>
-            <_Builtin.NavbarLink
-              className={_utils.cx(_styles, "nav-item")}
-              options={{
-                href: "/contact",
-              }}
-            >
-              {"Contact"}
-            </_Builtin.NavbarLink>
+              {"Ascend"}
+            </_Builtin.Link>
           </_Builtin.NavbarMenu>
           <_Builtin.NavbarButton tag="div">
             <_Builtin.Icon

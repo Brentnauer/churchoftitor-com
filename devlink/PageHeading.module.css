@@ -6,6 +6,8 @@
 
 .page-heading-title {
   font-family: 'Times New Roman', TimesNewRoman, Times, Baskerville, Georgia, serif;
+  font-size: 48px;
+  line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
 }
