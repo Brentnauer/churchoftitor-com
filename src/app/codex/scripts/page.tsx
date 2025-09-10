@@ -41,7 +41,7 @@ export default async function ScriptsIndex() {
               username={c.username}
               date={`Witnessed: ${c.unixdate}`}                 // or use c.unixdate if desired
               avatar={c.avatar}
-              link={{ href: `/scripts/${c.id}` }}
+              link={{ href: `/codex/scripts/${c.id}` }}
               userLink={{ href: c.userHref }}
             />
           ))}
