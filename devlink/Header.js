@@ -181,10 +181,10 @@ export function Header({
                 </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
-                    href: "#",
+                    href: "/doctrine/travelers-testament",
                   }}
                 >
-                  {"What We Believe"}
+                  {"Traveler's Testament"}
                 </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
