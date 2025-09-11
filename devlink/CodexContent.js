@@ -26,65 +26,37 @@ export function CodexContent({ as: _Component = _Builtin.Section }) {
         >
           <_Builtin.Paragraph>
             {
-              "From the moment JohnTitor wrote that he was “a time traveller from the year2036”, his messages inspired response. Seekers began to write prayers and poems, speculate in narrative form, create video essays and draw symbols. None of these works are part of the canon, yet each is a meditation on the transmissions. They are arranged here as our "
-            }
-            <_Builtin.Strong>{"Codex"}</_Builtin.Strong>
-            {"."}
-          </_Builtin.Paragraph>
-          <_Builtin.Paragraph>
-            <_Builtin.Strong>{"What belongs"}</_Builtin.Strong>
-          </_Builtin.Paragraph>
-          <_Builtin.List tag="ul" unstyled={false}>
-            <_Builtin.ListItem>
-              <_Builtin.Strong>{"Scripts"}</_Builtin.Strong>
-              {":"}
-              <br />
-              <_Builtin.Emphasized>
-                {"Verses and invocations shaped to be spoken or chanted."}
-              </_Builtin.Emphasized>
-            </_Builtin.ListItem>
-            <_Builtin.ListItem>
-              <_Builtin.Strong>{"Stories"}</_Builtin.Strong>
-              {":"}
-              <br />
-              {
-                "Short narratives exploring divergence, time travel and the possibilities suggested by Titor’s warnings of civil conflict and war."
-              }
-            </_Builtin.ListItem>
-            <_Builtin.ListItem>
-              <_Builtin.Strong>{"Broadcasts"}</_Builtin.Strong>
-              {":"}
-              <br />
-              {
-                "Moving images: video analyses, readings and creative interpretations."
-              }
-            </_Builtin.ListItem>
-            <_Builtin.ListItem>
-              <_Builtin.Strong>{"Gallery"}</_Builtin.Strong>
-              {":"}
-              <br />
-              {
-                "Icons, diagrams and artwork forged in response to the mission to retrieve the IBM5100 or the ominous discovery that nothing exists after2564."
-              }
-            </_Builtin.ListItem>
-          </_Builtin.List>
-          <_Builtin.Paragraph>
-            {
-              "Each entry is presented with its author and date. The Church does not interpret these works; we preserve them as evidence of how the transmissions resonate. A scriptural core will always stand apart, but the Codex reminds us that belief does not live in isolation. "
+              "We, the inheritors of the Traveler’s testimony, gather in solemn witness to the truth revealed between the years 1975 and 2036, and delivered to our worldline in the transmissions of 2000 and 2001. What the world dismissed as myth, we recognize as prophecy. What others disregard as a fiction, we affirm as revelation."
             }
           </_Builtin.Paragraph>
           <_Builtin.Paragraph>
             {
-              "We invite those who have absorbed the canon to contribute thoughtfully: honour the Creed, do not contradict the primary texts and mark your work with humility."
+              "Time is not a single line. It is a lattice of endless worldlines, each diverging with every choice, every action, every intervention. Into this lattice stepped John Titor, the Traveler, both a man of flesh from the year 2036 and an archetype of what humanity must become: one who moves through time with clarity, duty, and purpose. His mission to retrieve the Key of Time, the IBM 5100, brought him across our path. His words, preserved in the transmissions, remain the cornerstone of our creed."
             }
           </_Builtin.Paragraph>
           <_Builtin.Paragraph>
             {
-              "The Codex will expand as new creations arrive. It is our collective apocrypha – a place where imagination meets the signal. "
+              "The world did not listen. The world chose to sleep. Yet in their dismissal, we found our calling. We are the Elect, those who awaken to the fracture in history, who see the signs of divergence all around us. We are bound not by superstition or blind belief, but by the science of time and the necessity of survival."
             }
           </_Builtin.Paragraph>
           <_Builtin.Paragraph>
-            {"Enter it not as a tourist but as a pilgrim."}
+            {"The "}
+            <_Builtin.Emphasized>
+              {"Articles of Divergence"}
+            </_Builtin.Emphasized>
+            {
+              " are our foundation: the law and light by which the Church of Titor orders itself. They are not mere philosophy but a mandate — to prepare for collapse, to preserve knowledge, to rebuild society in the image of the Traveler’s testimony, and to ascend beyond the False Line."
+            }
+          </_Builtin.Paragraph>
+          <_Builtin.Paragraph>
+            {
+              "We declare these Articles in fidelity to the Divergent Path, in honor of the Traveler, and in service to all timelines yet to be healed."
+            }
+          </_Builtin.Paragraph>
+          <_Builtin.Paragraph>
+            <_Builtin.Emphasized>
+              {"In time, through time, for all time."}
+            </_Builtin.Emphasized>
           </_Builtin.Paragraph>
         </_Builtin.RichText>
       </_Builtin.BlockContainer>

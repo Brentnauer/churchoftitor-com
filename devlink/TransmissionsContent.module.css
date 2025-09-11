@@ -11,12 +11,15 @@
 }
 
 .page-content h2 {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  border-bottom: 1px solid hsla(188.87892376681611, 100.00%, 56.27%, 0.21);
 
   font-family: 'Times New Roman', TimesNewRoman, Times, Baskerville, Georgia, serif;
-  color: yellow;
-  font-size: 28px;
+  color: #20deff;
+  font-size: 24px;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 

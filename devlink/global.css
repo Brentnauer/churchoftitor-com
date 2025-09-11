@@ -2173,6 +2173,10 @@ p {
   margin-bottom: 10px;
 }
 
+strong {
+  font-weight: bold;
+}
+
 .w-layout-blockcontainer {
   display: block;
   margin-left: auto;
