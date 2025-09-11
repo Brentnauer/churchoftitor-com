@@ -10,6 +10,7 @@ export * from "./interactions";
 export * from "./utils";
 export * from "./devlink";
 export * from "./ApocryphaCard";
+export * from "./ApologeticsContent";
 export * from "./ArticlesOfDivergenceContent";
 export * from "./BasicSection";
 export * from "./CardDisplay";

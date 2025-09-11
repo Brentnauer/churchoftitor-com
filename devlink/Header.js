@@ -188,10 +188,10 @@ export function Header({
                 </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
-                    href: "#",
+                    href: "/doctrine/doctrine-divergence",
                   }}
                 >
-                  {"Beliefs"}
+                  {"Apologetics"}
                 </_Builtin.DropdownLink>
                 <_Builtin.DropdownLink
                   options={{
