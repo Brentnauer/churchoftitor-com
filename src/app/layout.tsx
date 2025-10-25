@@ -1,26 +1,11 @@
-// app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import "devlink/global.css";
-import { DevLinkProvider } from "devlink/DevLinkProvider";
-import { Header } from "devlink/Header";
-import { Footer } from "devlink/Footer";
-import { Inter } from "next/font/google";
-
-import keystaticConfig from "keystatic.config";
-import { createReader } from "@keystatic/core/reader";
-
-import { Bitter } from "next/font/google";
-
-
-const bitter = Bitter({ subsets: ["latin"], display: "swap", variable: "--font-bitter" });
-const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
-console.log(bitter);
+import ThemeProvider from "./ThemeProvider";
 
 const siteUrl = "https://www.churchoftitor.com";
 const siteName = "The Church of Titor";
 const siteDescription =
-  "A living hypertext liturgy dedicated to John Titor, retrocomputing, and temporal esoterica.";
+  "The official website of the Church of Titor - Join the Temporal Faith and ascend to higher worldlines through the Prophet's divine teachings.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -66,29 +51,22 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0b0b" },
+    { media: "(prefers-color-scheme: light)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Read site title from Keystatic singleton (with fallback)
-  const reader = createReader(process.cwd(), keystaticConfig);
-  const homepage = await reader.singletons.homepage.read();
-  const siteTitle = homepage?.title ?? "Church of Titor";
-
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`}>
-        <DevLinkProvider>
-          <Header text={siteTitle} />
+      <body>
+        <ThemeProvider>
           <main>{children}</main>
-          <Footer />
-        </DevLinkProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

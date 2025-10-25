@@ -1,26 +1,592 @@
-@import "tailwindcss";
+/* IBM 5100 AUTHENTIC TERMINAL AESTHETIC */
 
+/* Using system monospace fonts for authentic IBM 5100 look */
+
+/* CSS Variables for authentic phosphor colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Green Phosphor (P1) - Default */
+  --phosphor-green: #33FF33; /* P1 phosphor */
+  --phosphor-green-dim: #2ACC2A;
+  --phosphor-green-bright: #66FF66;
+  --phosphor-glow: rgba(51, 255, 51, 0.5);
+  --screen-bg: #0a0a0a; /* Deeper black */
+  --bezel-color: #2a2a2a;
+  --border-color: #1a1a1a;
+  
+  /* ANSI colors for authentic terminal */
+  --ansi-red: #FF3333;
+  --ansi-yellow: #FFFF33;
+  --ansi-blue: #3333FF;
+  --ansi-magenta: #FF33FF;
+  --ansi-cyan: #33FFFF;
+  --ansi-white: #FFFFFF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Amber Phosphor (P3) - Alternate theme */
+[data-theme="amber"] {
+  --phosphor-green: #FFBB00;
+  --phosphor-green-dim: #CC9900;
+  --phosphor-green-bright: #FFDD33;
+  --phosphor-glow: rgba(255, 187, 0, 0.5);
+  --screen-bg: #0a0a0a;
+  --bezel-color: #2a2a2a;
+  --border-color: #1a1a1a;
+  
+  --ansi-red: #FF6600;
+  --ansi-yellow: #FFDD00;
+  --ansi-blue: #0066FF;
+  --ansi-magenta: #FF00AA;
+  --ansi-cyan: #00CCFF;
+  --ansi-white: #FFFFFF;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #1a1a1a; /* Dark background like real IBM 5100 setup */
+  color: var(--phosphor-green);
+  font-family: 'Courier New', 'Courier', 'Lucida Console', monospace;
+  font-size: 16px;
+  line-height: 19.2px; /* 1.2 × 16px = 19.2px */
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  min-height: 100vh;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* CRT Effects - Layered Authentic Display */
+
+/* 1. Scanlines - enhanced for authenticity */
+.terminal-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 2. Screen curvature (vignette) */
+.terminal-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  pointer-events: none;
+  z-index: 11;
+}
+
+/* 3. Occasional flicker */
+@keyframes flicker {
+  0%, 98% { opacity: 1; }
+  99% { opacity: 0.98; }
+  100% { opacity: 1; }
+}
+
+.terminal-screen {
+  animation: flicker 0.15s infinite linear;
+}
+
+/* Phosphor glow effect */
+.terminal-text {
+  text-shadow: 0 0 3px var(--primary-color), 0 0 6px var(--primary-color), 0 0 9px var(--primary-color);
+  filter: contrast(1.2) brightness(1.1);
+}
+
+/* ANSI color classes */
+.ansi-red { color: var(--ansi-red); }
+.ansi-yellow { color: var(--ansi-yellow); }
+.ansi-blue { color: var(--ansi-blue); }
+.ansi-magenta { color: var(--ansi-magenta); }
+.ansi-cyan { color: var(--ansi-cyan); }
+.ansi-white { color: var(--ansi-white); }
+
+/* Blinking cursor */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Loading animation */
+@keyframes loading-dots {
+  0%, 20% { content: 'LOADING...'; }
+  25%, 45% { content: 'LOADING.'; }
+  50%, 70% { content: 'LOADING..'; }
+  75%, 95% { content: 'LOADING...'; }
+  100% { content: 'LOADING....'; }
+}
+
+.loading-text {
+  animation: loading-dots 1.5s infinite;
+}
+
+/* Authentic IBM 5100 Block Cursor */
+.cursor {
+  display: inline-block;
+  width: 9.6px; /* 1 character width */
+  height: 16px; /* Font size */
+  background: var(--phosphor-green);
+  animation: blink-cursor 530ms infinite;
+  box-shadow: 0 0 4px var(--phosphor-glow);
+  margin-left: 0;
+  vertical-align: top;
+}
+
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* IBM 5100 Terminal Structure - Authentic Layout */
+.terminal {
+  /* Outer bezel - authentic IBM 5100 beige/cream color */
+  background: linear-gradient(145deg, #d4c4a8, #c4b498);
+  padding: 30px 25px 25px 25px; /* EXACT MEASUREMENTS */
+  border-radius: 2px; /* More square */
+  margin: 0 auto;
+  width: 670px; /* 614px screen + 50px padding + 6px border */
+  max-width: 670px;
+  border: 3px solid #b8a890;
+  box-sizing: border-box; /* CRITICAL */
+  position: relative;
+  box-shadow: 
+    /* Outer drop shadow - object sitting on desk */
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    /* Top highlight - plastic sheen */
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    /* Bottom shadow - recessed edge */
+    inset 0 -2px 0 rgba(0, 0, 0, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.terminal::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(168, 152, 128, 0.5); /* Subtle */
+  border-radius: 1px;
+  pointer-events: none;
+}
+
+.terminal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.02) 2px,
+      rgba(0,0,0,0.02) 4px
+    );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.terminal-screen {
+  /* CRT screen housing - STRICT IBM 5100 dimensions */
+  background: var(--screen-bg);
+  border: 4px solid #1a1a1a; /* Thicker, darker */
+  position: relative;
+  width: 614px;
+  height: 307px;
+  margin: 0 auto; /* CENTER IT */
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 19.2px;
+  font-family: 'Courier New', 'Courier', 'Lucida Console', monospace;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  image-rendering: pixelated;
+  will-change: opacity;
+  transform: translateZ(0); /* GPU acceleration */
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  font-variant-ligatures: none;
+  font-feature-settings: 'liga' 0;
+  box-shadow: 
+    /* Deep inset - CRT recession */
+    inset 0 0 30px rgba(0, 0, 0, 0.9),
+    inset 0 0 15px rgba(0, 0, 0, 0.8),
+    /* Outer edge highlight */
+    0 1px 2px rgba(255, 255, 255, 0.1),
+    0 0 0 1px #0d0d0d;
+  white-space: pre;
+}
+
+/* Terminal Display Structure - Flexbox Layout */
+.terminal-display {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.terminal-content {
+  flex: 1 1 auto; /* Grow to fill, shrink if needed */
+  height: 268px; /* 14 lines × 19.2px = 268.8px, rounded to 268px */
+  max-height: 268px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 614px;
+  max-width: 614px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--phosphor-green);
+  text-shadow:
+    0 0 2px currentColor,
+    0 0 4px var(--phosphor-green),
+    0 0 8px var(--phosphor-glow);
+  white-space: pre;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: 0;
+  word-spacing: 0;
+  will-change: text-shadow;
+  backface-visibility: hidden;
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.terminal-content::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+/* Remove conflicting styles */
+.terminal-content pre {
+  margin: 0;
+  padding: 0;
+  transform: none; /* Remove any scaling */
+  transform-origin: center center;
+  position: relative;
+  z-index: 3;
+  
+  /* Keep all the existing properties */
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  overflow: visible;
+  width: 100%;
+  display: block;
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+/* ASCII borders */
+.ascii-box {
+  border: 2px solid var(--primary-color);
+  padding: 15px;
+  margin: 15px 0;
+  background: var(--primary-glow);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.ascii-box pre {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  word-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Menu items */
+.menu-item {
+  display: block;
+  padding: 2px 0;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background: var(--primary-color);
+  color: #000000;
+}
+
+.menu-key {
+  color: var(--ansi-yellow);
+  font-weight: bold;
+}
+
+/* Status line - exactly 1 line, 64 characters */
+.status-line {
+  flex: 0 0 19.2px; /* Exactly 1 line, no grow/shrink */
+  height: 19.2px;
+  min-height: 19.2px;
+  max-height: 19.2px;
+  width: 614px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  background: rgba(51, 255, 51, 0.03);
+  color: var(--phosphor-green);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 19.2px;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(51, 255, 51, 0.3);
+  text-shadow:
+    0 0 2px currentColor,
+    0 0 4px var(--phosphor-green),
+    0 0 8px var(--phosphor-glow);
+}
+
+/* Command line - exactly 1 line at bottom */
+.command-line {
+  flex: 0 0 19.2px; /* Exactly 1 line, no grow/shrink */
+  height: 19.2px;
+  min-height: 19.2px;
+  max-height: 19.2px;
+  width: 614px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  background: rgba(51, 255, 51, 0.03);
+  color: var(--phosphor-green);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 19.2px;
+  padding: 0;
+  margin: 0;
+  margin-top: 4px; /* Small gap */
+  border-top: 1px solid rgba(51, 255, 51, 0.3);
+  text-shadow:
+    0 0 2px currentColor,
+    0 0 4px var(--phosphor-green),
+    0 0 8px var(--phosphor-glow);
+}
+
+/* IBM 5100 Emulator Canvas */
+.emulator-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -ms-crisp-edges;
+  background: var(--screen-bg);
+  border: none;
+  outline: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Forms */
+input, textarea, select {
+  background: var(--background-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* Buttons */
+button {
+  background: var(--primary-color);
+  color: #000000;
+  border: 2px solid var(--primary-color);
+  padding: 5px 15px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: var(--background-color);
+  color: var(--primary-color);
+}
+
+/* IBM 5100 Responsive Scaling */
+
+/* Desktop: STRICT dimensions */
+@media (min-width: 768px) {
+  .terminal-screen {
+    width: 614px !important;
+    height: 307px !important;
+  }
+}
+
+/* Tablet: Scale proportionally */
+@media (max-width: 767px) and (min-width: 481px) {
+  .terminal {
+    transform: scale(0.75);
+    transform-origin: top center;
+  }
+}
+
+/* Mobile: Scale smaller */
+@media (max-width: 480px) {
+  .terminal {
+    transform: scale(0.52);
+    transform-origin: top center;
+  }
+  body {
+    padding: 10px;
+  }
+}
+
+/* IBM 5100 Components */
+
+/* Boot Sequence */
+.boot-content {
+  margin: 20px 0;
+  min-height: 200px;
+}
+
+.memory-check, .tape-loading {
+  margin: 10px 0;
+}
+
+.skip-message {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Tape Loader */
+.tape-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.tape-drive {
+  max-width: 64ch;
+  margin: 0 auto;
+}
+
+.tape-complete {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* System Info */
+.system-info-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.system-info {
+  max-width: 64ch;
+  margin: 0 auto;
+}
+
+/* Remove keyboard shortcuts overlay - not period-accurate */
+
+/* Print styles for IBM 5100 aesthetic */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: 'Courier New', 'Courier', monospace !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 20px !important;
+  }
+  
+  .terminal {
+    max-width: none !important;
+    background: white !important;
+    box-shadow: none !important;
+    padding: 20px !important;
+  }
+  
+  .terminal-screen {
+    border: 2px solid black !important;
+    background: white !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  
+  .status-line {
+    background: black !important;
+    color: white !important;
+    border-bottom: 2px solid black !important;
+  }
+  
+  .command-line {
+    border-top: 2px solid black !important;
+  }
+  
+  .cursor {
+    display: none !important;
+  }
+  
+  /* Hide tape loader and system info overlays */
+  .tape-loader,
+  .system-info-overlay {
+    display: none !important;
+  }
+  
+  /* Hide CRT effects when printing */
+  .terminal-screen::before,
+  .terminal-screen::after {
+    display: none !important;
+  }
 }
