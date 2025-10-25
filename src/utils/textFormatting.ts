@@ -134,8 +134,8 @@ export function formatTopicLine(topic: Record<string, unknown>, index: number, m
  */
 export function formatPostLine(post: Record<string, unknown>, index: number, maxWidth: number = 64): string {
   const number = (index + 1).toString().padStart(2);
-  const username = post.username || 'Unknown';
-  const date = formatDate(post.created_at);
+  const username = (post.username as string) || 'Unknown';
+  const date = formatDate(post.created_at as string);
   
   const line = `${number}. ${username} - ${date}`;
   return truncateText(line, maxWidth);
