@@ -121,9 +121,9 @@ export function formatDate(dateString: string): string {
  */
 export function formatTopicLine(topic: Record<string, unknown>, index: number, maxWidth: number = 64): string {
   const number = (index + 1).toString().padStart(2);
-  const date = formatDate(topic.created_at);
-  const title = formatTitle(topic.title, 30);
-  const posts = topic.posts_count.toString();
+  const date = formatDate(topic.created_at as string);
+  const title = formatTitle(topic.title as string, 30);
+  const posts = (topic.posts_count as number).toString();
   
   const line = `${number}. [${date}] ${title} (${posts} posts)`;
   return truncateText(line, maxWidth);
