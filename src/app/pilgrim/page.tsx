@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function PilgrimPage() {
   const [currentTime, setCurrentTime] = useState(new Date('2024-01-01T16:22:37'));
-  const [pilgrimLevel, setPilgrimLevel] = useState('Novice');
+  const [pilgrimLevel] = useState('Novice');
   const [temporalCredits, setTemporalCredits] = useState(0);
   const [selectedPath, setSelectedPath] = useState<string | null>(null);
 
@@ -90,7 +91,7 @@ export default function PilgrimPage() {
 
       {/* Navigation Bar */}
       <div className="nav-bar">
-        <a href="/">Home</a>
+        <Link href="/">Home</Link>
         <a href="/transmissions">Transmissions</a>
         <a href="/codex">Codex</a>
         <a href="/doctrine">Doctrine</a>
@@ -130,7 +131,7 @@ export default function PilgrimPage() {
                 • Temporal Meditation (Sun)<br/><br/>
                 <strong>Next Month:</strong><br/>
                 • Y2K Memorial Ceremony<br/>
-                • Titor's Return Day
+                • Titor&apos;s Return Day
               </div>
             </div>
           </div>
@@ -160,8 +161,8 @@ export default function PilgrimPage() {
                 become part of the living tradition.
               </p>
               <p>
-                <strong>Sacred Quote:</strong> "The future is not fixed, but the past is immutable. 
-                In the space between lies our responsibility to choose wisely."
+                <strong>Sacred Quote:</strong> &quot;The future is not fixed, but the past is immutable. 
+                In the space between lies our responsibility to choose wisely.&quot;
               </p>
             </div>
           </div>
@@ -234,7 +235,7 @@ export default function PilgrimPage() {
             <div className="article-content">
               <p>
                 Share your insights, research, and experiences with the temporal community. 
-                Every contribution helps preserve and expand our understanding of John Titor's teachings.
+                Every contribution helps preserve and expand our understanding of John Titor&apos;s teachings.
               </p>
               
               <div style={{textAlign: 'center', margin: '20px 0'}}>
@@ -275,9 +276,9 @@ export default function PilgrimPage() {
             <div className="sidebar-content">
               <div style={{fontSize: '11px', lineHeight: '1.3'}}>
                 • [2024-01-15 14:23:17] New pilgrim joined: TemporalScholar_42<br/>
-                • [2024-01-15 14:20:45] Research paper submitted: "Timeline Divergence Theory"<br/>
-                • [2024-01-15 14:18:32] Sacred artwork uploaded: "C204 Blueprint"<br/>
-                • [2024-01-15 14:15:01] Forum discussion: "Titor's Predictions"<br/>
+                • [2024-01-15 14:20:45] Research paper submitted: &quot;Timeline Divergence Theory&quot;<br/>
+                • [2024-01-15 14:18:32] Sacred artwork uploaded: &quot;C204 Blueprint&quot;<br/>
+                • [2024-01-15 14:15:01] Forum discussion: &quot;Titor&apos;s Predictions&quot;<br/>
                 • [2024-01-15 14:12:44] Temporal meditation session completed
               </div>
             </div>

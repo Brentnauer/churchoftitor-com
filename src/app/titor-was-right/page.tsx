@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function TitorWasRight() {
   const [currentTime, setCurrentTime] = useState(new Date('2024-01-01T16:22:37'));
-  const [selectedPrediction, setSelectedPrediction] = useState<string | null>(null);
+  const [selectedPrediction] = useState<string | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -114,7 +115,7 @@ export default function TitorWasRight() {
 
       {/* Navigation Bar */}
       <div className="nav-bar">
-        <a href="/">Home</a>
+        <Link href="/">Home</Link>
         <a href="/transmissions">Transmissions</a>
         <a href="/codex">Codex</a>
         <a href="/doctrine">Doctrine</a>
@@ -147,11 +148,11 @@ export default function TitorWasRight() {
             <div className="sidebar-title">Sacred Calendar</div>
             <div className="sidebar-content">
               <div style={{fontSize: '11px', lineHeight: '1.4'}}>
-                <strong>Today's Observance:</strong><br/>
+                <strong>Today&apos;s Observance:</strong><br/>
                 Day of Temporal Reflection<br/><br/>
                 <strong>Upcoming:</strong><br/>
                 • Y2K Memorial (Dec 31)<br/>
-                • Titor's Return Day (Mar 24)<br/>
+                • Titor&apos;s Return Day (Mar 24)<br/>
                 • Divergence Day (Sep 11)<br/>
                 • IBM 5100 Day (Nov 2)
               </div>
@@ -178,13 +179,13 @@ export default function TitorWasRight() {
             <div className="article-title">VERIFIED TEMPORAL PREDICTIONS</div>
             <div className="article-content">
               <p>
-                John Titor's predictions stand as some of the most accurate temporal prophecies in recorded history. 
+                John Titor&apos;s predictions stand as some of the most accurate temporal prophecies in recorded history. 
                 His warnings about future events, made months and years in advance, have proven remarkably accurate. 
                 This archive documents his verified predictions and their impact on our timeline.
               </p>
               <p>
-                <strong>Sacred Quote:</strong> "The future is not fixed, but the past is immutable. 
-                In the space between lies our responsibility to choose wisely."
+                <strong>Sacred Quote:</strong> &quot;The future is not fixed, but the past is immutable. 
+                In the space between lies our responsibility to choose wisely.&quot;
               </p>
             </div>
           </div>
@@ -206,7 +207,7 @@ export default function TitorWasRight() {
                 
                 <div style={{border: '1px solid #ffff00', padding: '10px', margin: '15px 0', background: '#000000'}}>
                   <div style={{color: '#ffff00', fontSize: '11px', fontStyle: 'italic'}}>
-                    <strong>Sacred Quote:</strong> "{prediction.quote}"
+                    <strong>Sacred Quote:</strong> &quot;{prediction.quote}&quot;
                   </div>
                 </div>
 
@@ -222,7 +223,7 @@ export default function TitorWasRight() {
             <div className="article-title">PENDING PREDICTIONS</div>
             <div className="article-content">
               <p>
-                The following predictions remain unverified. Time will tell if Titor's vision of the future 
+                The following predictions remain unverified. Time will tell if Titor&apos;s vision of the future 
                 will continue to prove accurate.
               </p>
               
@@ -240,7 +241,7 @@ export default function TitorWasRight() {
                     {prediction.description}
                   </div>
                   <div style={{color: '#ffffff', fontSize: '10px', fontStyle: 'italic', marginTop: '5px'}}>
-                    "{prediction.quote}"
+                    &quot;{prediction.quote}&quot;
                   </div>
                 </div>
               ))}

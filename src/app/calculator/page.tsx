@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function TimelineCalculator() {
   const [currentTime, setCurrentTime] = useState(new Date('2024-01-01T16:22:37'));
@@ -28,7 +29,7 @@ export default function TimelineCalculator() {
   ];
 
   const calculateDivergence = () => {
-    let baseStability = 97.3;
+    const baseStability = 97.3;
     let totalImpact = 0;
     
     selectedEvents.forEach(eventId => {
@@ -69,13 +70,13 @@ export default function TimelineCalculator() {
 
       {/* Navigation Bar */}
       <div className="nav-bar">
-        <a href="/">Home</a>
-        <a href="/transmissions">Transmissions</a>
-        <a href="/codex">Codex</a>
-        <a href="/doctrine">Doctrine</a>
-        <a href="/apocrypha">Apocrypha</a>
-        <a href="/ascend">Ascend</a>
-        <a href="/contact">Contact</a>
+        <Link href="/">Home</Link>
+        <Link href="/transmissions">Transmissions</Link>
+        <Link href="/codex">Codex</Link>
+        <Link href="/doctrine">Doctrine</Link>
+        <Link href="/apocrypha">Apocrypha</Link>
+        <Link href="/ascend">Ascend</Link>
+        <Link href="/contact">Contact</Link>
       </div>
 
       {/* Main Content */}
@@ -100,7 +101,7 @@ export default function TimelineCalculator() {
             <div className="sidebar-title">Sacred Instructions</div>
             <div className="sidebar-content">
               <div style={{fontSize: '11px', lineHeight: '1.4'}}>
-                Select temporal events to calculate divergence probability. This tool uses Titor's original algorithms to predict timeline stability.
+                Select temporal events to calculate divergence probability. This tool uses Titor&apos;s original algorithms to predict timeline stability.
                 <br/><br/>
                 <strong>Warning:</strong> High divergence may indicate timeline collapse. Use with caution.
               </div>
@@ -201,7 +202,7 @@ export default function TimelineCalculator() {
         <div className="right-sidebar">
           {/* Titor's Predictions */}
           <div className="sidebar-section">
-            <div className="sidebar-title">Titor's Predictions</div>
+            <div className="sidebar-title">Titor&apos;s Predictions</div>
             <div className="sidebar-content">
               <div style={{fontSize: '11px', lineHeight: '1.4'}}>
                 <strong>Verified Events:</strong><br/>
