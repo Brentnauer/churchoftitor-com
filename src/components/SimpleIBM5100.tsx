@@ -21,7 +21,7 @@ export default function SimpleIBM5100({ }: SimpleIBM5100Props) {
   const [navigationHistory, setNavigationHistory] = useState<string[]>(['menu']);
   const [currentPostIndex, setCurrentPostIndex] = useState<number>(0);
   const [lastError, setLastError] = useState<string | null>(null);
-  const [retryCount, setRetryCount] = useState<number>(0);
+  const [, setRetryCount] = useState<number>(0);
   // const terminalRef = useRef<HTMLDivElement>(null);
 
   // Boot sequence steps
@@ -314,13 +314,17 @@ export default function SimpleIBM5100({ }: SimpleIBM5100Props) {
         setCurrentView('topics');
         setNavigationHistory(prev => [...prev, 'topics']);
       } else {
-        addLine(`ERROR: Failed to load topics (${data.error || 'Unknown error'})`);
-        addLine('RETRY? (Y/N)');
+        const errorMsg = data.error || 'Unknown error';
+        setLastError(errorMsg);
+        addLine(`ERROR: Failed to load topics (${errorMsg})`);
+        addLine('PRESS R TO RETRY OR /h TO RETURN HOME');
         addLine('>');
       }
     } catch (error: unknown) {
-      addLine(`ERROR: Network connection failed (${(error as Error).message || 'Unknown error'})`);
-      addLine('RETRY? (Y/N)');
+      const errorMsg = (error as Error).message || 'Unknown error';
+      setLastError(errorMsg);
+      addLine(`ERROR: Network connection failed (${errorMsg})`);
+      addLine('PRESS R TO RETRY OR /h TO RETURN HOME');
       addLine('>');
     }
     setLoading(false);
@@ -675,6 +679,13 @@ export default function SimpleIBM5100({ }: SimpleIBM5100Props) {
           event.preventDefault();
           handleBackNavigation();
           break;
+        case 'r':
+        case 'R':
+          if (lastError) {
+            event.preventDefault();
+            handleRetry();
+          }
+          break;
         case 'ArrowUp':
           event.preventDefault();
           scrollUp();
@@ -698,9 +709,9 @@ export default function SimpleIBM5100({ }: SimpleIBM5100Props) {
           break;
       }
     }
-  }, [isInitialized, loading, inputMode, currentLine, handleBackNavigation, handleMenuSelection, hasMoreContent, scrollDown, scrollUp]);
+  }, [isInitialized, loading, inputMode, currentLine, handleBackNavigation, handleMenuSelection, hasMoreContent, scrollDown, scrollUp, handleRetry, lastError]);
 
-  const handleTextInput = (input: string) => {
+  const handleTextInput = useCallback((input: string) => {
     // Handle quick commands first
     if (input.startsWith('/')) {
       const command = input.toLowerCase();
@@ -962,7 +973,7 @@ export default function SimpleIBM5100({ }: SimpleIBM5100Props) {
         addLine('>');
       }
     }
-  };
+  }, [currentView, forumData, currentPostIndex, handleBackNavigation, fetchTopics, fetchCategories, searchForum, fetchTopic, fetchCategoryTopics, displayPostContent, addLine, clearDisplay, setCurrentView, setNavigationHistory, setInputMode, setDisplay, formatLines]);
 
   useEffect(() => {
     setIsInitialized(true);
@@ -1029,7 +1040,9 @@ export default function SimpleIBM5100({ }: SimpleIBM5100Props) {
           <div className="command-line">
             {formatLine(currentView === 'menu' && !loading ? 'CHURCH OF TITOR BBS NODE 1' : 
                        currentView === 'boot' ? 'INITIALIZING...' : 
-                       loading ? 'LOADING...' : 'WAITING')}
+                       loading ? 'LOADING...' : 
+                       lastError ? 'ERROR - PRESS R TO RETRY' :
+                       'WAITING')}
           </div>
         </div>
       </div>
